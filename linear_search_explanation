@@ -1,0 +1,44 @@
+int n;
+Declares an integer variable n.
+This will store the size of the array.
+cout << "Enter array size: ";
+Prints a message asking the user to input the array size.
+cin >> n;
+Takes input from the user and stores it in n.
+int arr[n];
+Creates an integer array of size n.
+So if the user enters 5, this becomes int arr[5];.
+cout << "Enter " << n << " elements: ";
+Asks the user to enter n elements.
+for(int i = 0; i < n; i++) {
+This loop runs from index 0 to n-1.
+It will execute n times.
+cin >> arr[i];
+Stores each user input into the array at index i.
+int key;
+Declares an integer variable key.
+This is the number we want to search.
+cout << "Enter the number to search: ";
+Asks the user which number they want to find.
+cin >> key;
+Stores that number in the variable key.
+bool found = false;
+Creates a boolean variable named found.
+Initially set to false because we haven’t found the element yet.
+for(int i = 0; i < n; i++) {
+Another loop that checks each element of the array one by one.
+if(arr[i] == key) {
+Compares the current array element with the search value (key).
+If they are equal, it means we found the element.
+cout << "Element found at index: " << i << endl;
+Prints the index where the element is found.
+found = true;
+Updates the boolean variable to true since the element is found.
+break;
+Stops the loop immediately.
+No need to continue searching once we find the element.
+if(!found) {
+After the loop ends, this checks:
+If found is still false, it means the element was not in the array.
+cout << "Element not found." << endl;
+Prints a message saying the element does not exist in the array.
