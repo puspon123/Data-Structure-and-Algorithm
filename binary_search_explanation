@@ -1,0 +1,58 @@
+int n;
+Declares an integer variable n.
+This will store the size of the array.
+cout << "Enter array size: ";
+Prints a message asking the user to input the array size.
+cin >> n;
+Stores the user input into n.
+int arr[n];
+Creates an array of size n. Important: The array must be sorted for Binary Search to work.
+cout << "Enter " << n << " sorted elements: ";
+Asks the user to enter n elements in sorted order.
+for(int i = 0; i < n; i++) {
+Loop runs from 0 to n-1.
+cin >> arr[i];
+Stores each input into the array.
+int key;
+Declares the variable that will store the value to search.
+cout << "Enter the number to search: ";
+Asks which number to find.
+cin >> key;
+Stores that number into key.
+int left = 0, right = n - 1;
+Defines the search boundaries.
+left = starting index
+right = last index
+Binary search always works between these two limits.
+bool found = false;
+Initially assume the element is not found.
+while(left <= right)
+Loop continues as long as the search range is valid.
+If left becomes greater than right, search stops.
+int mid = (left + right) / 2;
+Finds the middle index.
+This divides the array into two halves.
+if(arr[mid] == key)
+If middle element equals the search value → success.
+cout << "Element found at index: " << mid << endl;
+Prints the position where it was found.
+found = true;
+Marks that the element is found.
+break;
+Stops the loop immediately. No need to continue.
+else if(arr[mid] < key)
+If middle value is smaller than the key:
+That means the key must be in the right half.
+left = mid + 1;
+Ignore left half.
+Move the left boundary to the right side.
+else
+If middle value is greater than the key:
+That means the key must be in the left half.
+right = mid - 1;
+Ignore right half.
+Move the right boundary to the left side.
+if(!found)
+After loop ends, check if we never found the element.
+cout << "Element not found." << endl;
+Prints message if the element does not exist.
